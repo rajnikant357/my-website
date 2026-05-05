@@ -4,12 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>aura maker </title>
+    <style>
+        :root{--accent:#ff3b3b;--muted:#6b7280;--bg:#f7f7fb}
+        body{font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);margin:0;padding:32px;display:flex;justify-content:center}
+        .card{background:#fff;border-radius:12px;box-shadow:0 6px 20px rgba(16,24,40,0.08);padding:24px;max-width:480px;width:100%}
+        .header{display:flex;align-items:center;gap:16px}
+        .thumb{width:72px;height:48px;border-radius:8px;object-fit:cover}
+        h1{font-size:18px;margin:0}
+        .sub-count{margin-top:18px;display:flex;align-items:baseline;gap:12px}
+        .count{font-size:42px;font-weight:700;color:#111;min-width:140px;text-align:left;transition:transform .18s ease}
+        .count.bump{transform:scale(1.08)}
+        .meta{color:var(--muted);font-size:13px}
+        .controls{margin-top:18px;display:flex;gap:8px}
+        button{cursor:pointer;border:0;padding:10px 14px;border-radius:8px;font-weight:600}
+        .btn-primary{background:linear-gradient(90deg,var(--accent),#ff7a7a);color:#fff}
+        .btn-ghost{background:transparent;border:1px solid #e6e6e9;color:#111}
+        .small{font-size:12px;padding:8px 10px;border-radius:8px;background:#f3f4f6;color:#111}
+        .note{margin-top:12px;color:var(--muted);font-size:13px}
+    </style>
 </head>
 <body>
-    <h1>this is my first website</h1>
-    <button style="color:rgb(255, 2, 2);">subscribe</button>
-    <img  src="wallpaper.jpeg" style="width:400px;height:200px, "/>
-    <h3>  more photos</h3>
+    <div class="card">
+        <div class="header">
+            <img class="thumb" src="wallpaper.jpeg" alt="cover">
+            <div>
+                <h1>This Is My First Website</h1>
+                <div class="meta">Created by my little bro — subscriber</div>
+            </div>
+        </div>
+
+        <div class="sub-count">
+            <div class="count" id="subscriberCount">0</div>
+            <div>
+                <div class="meta">subscribers</div>
+                <div class="meta" id="lastUpdated">—</div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="subscribeBtn" class="btn-primary">Subscribe</button>
+            <button id="unsubscribeBtn" class="btn-ghost">Unsubscribe</button>
+        </div>
+ </div>
+
+    <script src="./index.js"></script>
 
 </body>
 </html>
